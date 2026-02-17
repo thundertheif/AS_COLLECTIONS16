@@ -1,0 +1,334 @@
+/* =========================
+   PAGE CONTAINER
+========================= */
+
+.sarees-page {
+  padding: 30px 40px;
+  background: #f4f6f8;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.saree-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+
+/* =========================
+   SEARCH & SORT CONTROLS
+========================= */
+
+.saree-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.saree-controls input {
+  padding: 10px 14px;
+  width: 260px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.saree-controls input:focus {
+  border-color: black;
+}
+
+.saree-controls select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+/* =========================
+   PRICE FILTER
+========================= */
+
+.price-filter {
+  text-align: center;
+  padding: 20px;
+}
+
+.price-filter label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.price-filter input[type="range"] {
+  width: 100%;
+  max-width: 400px;
+}
+
+
+/* =========================
+   CATEGORY MENU
+========================= */
+
+.saree-menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.saree-menu button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.saree-menu button:hover {
+  background: black;
+  color: white;
+}
+
+.saree-menu .active {
+  background: black;
+  color: white;
+  border: none;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.saree-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.saree-card {
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.saree-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+.price-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers horizontally */
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.price-filter input[type="range"] {
+  width: 300px; /* or 100% if you want full width */
+}
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.saree-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/* =========================
+   PRODUCT NAME
+========================= */
+
+.saree-card h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #e60023;
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+.rating {
+  font-size: 14px;
+  color: #f5a623;
+  margin-bottom: 5px;
+}
+
+
+/* =========================
+   WISHLIST ICON
+========================= */
+
+.wishlist {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: white;
+  padding: 6px 8px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.wishlist:hover {
+  transform: scale(1.2);
+}
+
+
+/* =========================
+   BUTTON GROUP
+========================= */
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+/* =========================
+   ADD TO CART BUTTON
+========================= */
+
+.cart-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cart-btn:hover {
+  background: #333;
+}
+
+
+/* =========================
+   BUY NOW BUTTON
+========================= */
+
+.buy-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: #ff3f6c;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: #e60023;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.no-products {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  margin-top: 50px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+  .sarees-page {
+    padding: 20px;
+  }
+
+  .saree-card img {
+    height: 240px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .saree-controls {
+    flex-direction: column;
+  }
+
+  .saree-controls input,
+  .price-filter input {
+    width: 100%;
+  }
+
+  .saree-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  }
+
+  .saree-card img {
+    height: 200px;
+  }
+
+}

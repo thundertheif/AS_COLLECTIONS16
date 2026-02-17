@@ -1,0 +1,144 @@
+.sale-page {
+  padding: 30px 40px;
+  background: #f4f6f8;
+  min-height: 100vh;
+  max-width: 1300px;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🔥 Banner */
+.sale-banner {
+  text-align: center;
+  background: linear-gradient(135deg, #ff3f6c, #ff8a00);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.countdown span {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* 🎯 Filters */
+.sale-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.sale-filters button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
+.sale-filters .active {
+  background: black;
+  color: white;
+  border: none;
+}
+
+/* 🛍️ Grid */
+.sale-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* 🧾 Card */
+.sale-card {
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.sale-card:hover {
+  transform: translateY(-6px);
+}
+
+/* 🖼 Image */
+.sale-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 🔴 Badge */
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e60023;
+  color: white;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* ❤️ Wishlist */
+.wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  padding: 6px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 💰 Price */
+.price-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.new-price {
+  color: #e60023;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* 🔘 Buttons */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cart-btn {
+  flex: 1;
+  background: black;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.buy-btn {
+  flex: 1;
+  background: #ff3f6c;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}

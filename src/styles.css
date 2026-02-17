@@ -1,0 +1,27 @@
+
+body { margin: 0; font-family: Arial; background: #f6f3ef; }
+
+.topbar { display: flex; justify-content: space-between; padding: 15px 30px; background: white; }
+.topbar input { width: 40%; padding: 8px; }
+
+.nav { display: flex; justify-content: center; gap: 30px; padding: 10px; background: #f0ece8; }
+.sale { color: red; font-weight: bold; }
+
+.hero { display: flex; gap: 20px; padding: 20px; }
+.hero-box { flex: 1; padding: 60px; color: white; }
+.hero-box.red { background: #a83232; }
+.hero-box.green { background: #355c4f; }
+
+.categories, .products { padding: 30px; text-align: center; }
+
+.category-grid, .product-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.category { background: white; padding: 40px; width: 200px; }
+
+.product-card { background: white; padding: 15px; width: 180px; }
+.img-placeholder { height: 150px; background: #ddd; margin-bottom: 10px; }
+
+.offers { display: flex; gap: 20px; padding: 20px; justify-content: center; }
+.offer { background: #d35400; color: white; padding: 20px; }
+
+.footer { background: #222; color: white; padding: 30px; }
+.footer-grid { display: flex; justify-content: space-around; }

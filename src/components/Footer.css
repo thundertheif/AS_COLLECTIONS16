@@ -1,0 +1,37 @@
+.footer {
+  background: #111;
+  color: white;
+  padding: 40px 80px;
+  margin-top: 50px;
+}
+
+/* Make columns */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footer h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+.footer p {
+  font-size: 14px;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.footer p:hover {
+  color: #ffcc00;
+}
+
+/* Bottom copyright */
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: gray;
+}
