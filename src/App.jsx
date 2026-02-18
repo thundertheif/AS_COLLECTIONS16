@@ -22,12 +22,13 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sarees" element={<Sarees />} />
-        <Route path="/Tops" element={<Tops />} />
+        <Route path="/tops" element={<Tops />} />
         <Route path="/kurtis" element={<Kurtis />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/designer" element={<DesignerMaterials />} />
         <Route path="/sale" element={<Sale />} />
         <Route path="/wishlist" element={<Wishlist />} />
+
       </Routes>
 
       {/* Footer shows on all pages */}

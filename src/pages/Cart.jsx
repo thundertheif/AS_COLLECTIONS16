@@ -1,6 +1,7 @@
 /* ======================= Cart.jsx ======================= */
 import { useCart } from "../context/CartContext";
-import "./page.css";
+import "../styles/page.css"; // must exist
+
 
 export default function Cart() {
   const { cart, removeFromCart, increaseQty, decreaseQty, clearCart } = useCart();
@@ -65,4 +66,4 @@ export default function Cart() {
       )}
     </div>
   );
-}
+} 
