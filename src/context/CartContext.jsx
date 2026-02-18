@@ -31,6 +31,10 @@ export function CartProvider({ children }) {
       item.id === id ? { ...item, qty: item.qty + 1 } : item
     ));
   };
+   const totalPrice = cart.reduce(
+  (total, item) => total + item.price * item.qty,
+    0
+  );
 
   const decreaseQty = (id) => {
     setCart(cart.map((item) =>

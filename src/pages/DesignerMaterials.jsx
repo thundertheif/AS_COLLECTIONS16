@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./DesignerMaterials.css";
 
-import cotton from "../assets/materials/cotton.JPG";
-import rayon from "../assets/materials/rayon.JPG";
-import chanderi from "../assets/materials/chanderi.JPG";
-import georgette from "../assets/materials/georgette.JPG";
-import silk from "../assets/materials/silk.JPG";
+import cotton from "../assets/materials/cotton.jpg";
+import rayon from "../assets/materials/rayon.jpg";
+import chanderi from "../assets/materials/chanderi.jpg";
+import georgette from "../assets/materials/georgette.jpg";
+import silk from "../assets/materials/silk.jpg";
 
 export default function DesignerMaterials() {
   // ✅ DATA

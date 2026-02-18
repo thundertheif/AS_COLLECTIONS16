@@ -169,10 +169,10 @@
 
 .saree-card img {
   width: 100%;
-  height: 420px;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 10px;
 }
+
 
 
 /* =========================

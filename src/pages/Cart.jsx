@@ -1,6 +1,6 @@
 /* ======================= Cart.jsx ======================= */
 import { useCart } from "../context/CartContext";
-import "./Cart.css";
+import "./page.css";
 
 export default function Cart() {
   const { cart, removeFromCart, increaseQty, decreaseQty, clearCart } = useCart();
@@ -8,8 +8,9 @@ export default function Cart() {
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   return (
-    <div className="cart-page">
-      <h2>🛒 Your Shopping Cart</h2>
+    <div className="page-container">
+      <h2 className="page-title">🛒 Your Shopping Cart</h2>
+      <div className="page-divider"></div>
 
       {cart.length === 0 ? (
         <div className="empty-cart">
@@ -37,7 +38,10 @@ export default function Cart() {
                     Subtotal: ₹ {item.price * item.qty}
                   </p>
 
-                  <button className="remove" onClick={() => removeFromCart(item.id)}>
+                  <button
+                    className="remove"
+                    onClick={() => removeFromCart(item.id)}
+                  >
                     ❌ Remove
                   </button>
                 </div>
@@ -49,7 +53,10 @@ export default function Cart() {
           <div className="cart-summary">
             <h3>Total Amount: ₹ {total}</h3>
 
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <button className="checkout-btn">
+              Proceed to Checkout
+            </button>
+
             <button className="clear-btn" onClick={clearCart}>
               Clear Cart
             </button>
@@ -59,4 +66,3 @@ export default function Cart() {
     </div>
   );
 }
-

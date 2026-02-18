@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/ASC.jpeg";  
-<Link to="/designer-materials">Designer Materials</Link>
+
 
 export default function Navbar() {
   return (
@@ -22,12 +22,20 @@ export default function Navbar() {
           <button>🔍</button>
         </div>
 
-        {/* Icons */}
-        <div className="nav-icons">
-          <Link to="/wishlist">♡ Wishlist</Link>
-          <span>🛒 Cart</span>
-          <span>Login / Signup</span>
-        </div>
+       {/* Icons */}
+   <div className="nav-icons">
+        <Link to="/wishlist">
+          <button className="nav-btn wishlist-btn">♡ Wishlist</button>
+       </Link>
+
+      <Link to="/cart">
+          <button className="nav-btn cart-btn">🛒 Cart</button>
+      </Link>
+
+      <button className="nav-btn login-btn">
+          Login / Signup
+      </button>
+    </div>
 
       </div>
 
@@ -37,7 +45,8 @@ export default function Navbar() {
         <Link to="/designer">DESIGNER MATERIALS</Link>
         <Link to="/Tops">TOPS</Link>
         <Link to="/kurtis">KURTIS</Link>
-        <Link to="/sale" className="sale">SALE</Link>
+        <Link to="/sale">SALE</Link>
+
       </nav>
 
     </header>
