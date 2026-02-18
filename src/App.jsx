@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import Sarees from "./pages/Sarees";
-import Tops from "./pages/Tops";
+import Tops from "./pages/tops";
 import Kurtis from "./pages/Kurtis";
 import Cart from "./pages/Cart";
 import DesignerMaterials from "./pages/DesignerMaterials";
@@ -22,7 +22,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sarees" element={<Sarees />} />
-        <Route path="/tops" element={<Tops />} />
+       <Route path="/tops" element={<Tops />} />
         <Route path="/kurtis" element={<Kurtis />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/designer" element={<DesignerMaterials />} />

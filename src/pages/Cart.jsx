@@ -1,6 +1,6 @@
 /* ======================= Cart.jsx ======================= */
 import { useCart } from "../context/CartContext";
-import "../styles/page.css"; // must exist
+import "./Cart.css";
 
 
 export default function Cart() {

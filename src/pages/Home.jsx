@@ -1,9 +1,9 @@
 import "./Home.css";
 
 // Import Images
-import saree1 from "../assets/sarees/saree1.JPG";
-import saree2 from "../assets/sarees/saree2.JPG";
-import saree3 from "../assets/sarees/saree3.JPG";
+import saree1 from "../assets/sarees/saree1.jpg";
+import saree2 from "../assets/sarees/saree2.jpg";
+import saree3 from "../assets/sarees/saree3.jpg";
 import tops1 from "../assets/tops/tops1.jpg";
 import kurti1 from "../assets/kurtis/kurti1.jpg";
 

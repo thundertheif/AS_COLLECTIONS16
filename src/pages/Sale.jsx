@@ -4,8 +4,8 @@ import "./Sale.css";
 // 🔥 IMPORT YOUR IMAGES
 import silk1 from "../assets/sarees/silk/silk1.jpg";
 import cotton1 from "../assets/sarees/cotton/cotton1.jpg";
-import kurti1 from "../assets/materials/rayon.JPG";
-import top1 from "../assets/materials/georgette.JPG";
+import kurti1 from "../assets/materials/rayon.jpg";
+import top1 from "../assets/materials/georgette.jpg";
 
 export default function Sale() {
   // ⏰ Countdown timer (24 hours)
