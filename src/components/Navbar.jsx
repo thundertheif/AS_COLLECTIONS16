@@ -1,57 +1,83 @@
-import "./Navbar.css";
-import { Link } from "react-router-dom";
-import logo from "../assets/images/ASC.jpeg";
 
-export default function Navbar() {
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+
+// Components
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+// Customer Pages
+import Home from "./pages/Home";
+import Sarees from "./pages/Sarees";
+import Tops from "./pages/Tops";
+import Kurtis from "./pages/Kurtis";
+import Cart from "./pages/Cart";
+import DesignerMaterials from "./pages/DesignerMaterials";
+import Sale from "./pages/Sale";
+import Wishlist from "./pages/Wishlist";
+
+// Customer Auth
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+
+// Admin Auth & Pages
+import AdminLogin from "./pages/AdminLogin";
+import ProtectedAdmin from "./pages/admin/ProtectedAdmin";
+import AdminLayout from "./pages/admin/AdminLayout";
+import Dashboard from "./pages/admin/Dashboard";
+import Products from "./pages/admin/Products";
+import Orders from "./pages/admin/Orders";
+import Settings from "./pages/admin/Settings";
+
+// Layout Wrapper
+function LayoutWrapper() {
+  const location = useLocation();
+
+  // Hide navbar & footer only inside admin panel (not admin-login)
+  const isAdminPanel = location.pathname.startsWith("/admin") && location.pathname !== "/admin-login";
+
   return (
-    <header className="nav-main">
+    <>
+      {/* Navbar only for customer website */}
+      {!isAdminPanel && <Navbar />}
 
-      {/* Top Section */}
-      <div className="nav-top">
+      <Routes>
+        {/* ================= CUSTOMER WEBSITE ================= */}
+        <Route path="/" element={<Home />} />
+        <Route path="/sarees" element={<Sarees />} />
+        <Route path="/tops" element={<Tops />} />
+        <Route path="/kurtis" element={<Kurtis />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/designer" element={<DesignerMaterials />} />
+        <Route path="/sale" element={<Sale />} />
+        <Route path="/wishlist" element={<Wishlist />} />
 
-        {/* LOGO WITH IMAGE */}
-        <Link to="/" className="logo-container">
-          <img src={logo} alt="AS Collections Logo" className="logo-img" />
-          <span className="logo-text">AS COLLECTIONS</span>
-        </Link>
+        {/* CUSTOMER LOGIN / SIGNUP */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
 
-        {/* Search */}
-        <div className="search-box">
-          <input type="text" placeholder="Search for sarees, kurtis, tops and more..." />
-          <button>🔍</button>
-        </div>
+        {/* Admin Login */}
+<Route path="/admin-login" element={<AdminLogin />} />
 
-        {/* Icons */}
-        <div className="nav-icons">
+{/* Protected Admin Panel */}
+<Route path="/admin" element={<ProtectedAdmin />}>
+  <Route element={<AdminLayout />}>
+    <Route path="dashboard" element={<Dashboard />} />
+    <Route path="products" element={<Products />} />
+    <Route path="settings" element={<Settings />} />
+  </Route>
+</Route>
 
-          <Link to="/wishlist">
-            <button className="nav-btn wishlist-btn">♡ Wishlist</button>
-          </Link>
-
-          <Link to="/cart">
-            <button className="nav-btn cart-btn">🛒 Cart</button>
-          </Link>
-
-          <Link to="/login">
-            <button className="nav-btn login-btn">Login / Signup</button>
-          </Link>
-
-          <Link to="/admin-login">
-            <button className="nav-btn admin-btn">Admin Login</button>
-          </Link>
-
-        </div>
-      </div>
-
-      {/* Menu */}
-      <nav className="nav-menu">
-        <Link to="/sarees">SAREES</Link>
-        <Link to="/designer">DESIGNER MATERIALS</Link>
-        <Link to="/tops">TOPS</Link>
-        <Link to="/kurtis">KURTIS</Link>
-        <Link to="/sale">SALE</Link>
-      </nav>
-
-    </header>
+      {/* Footer only for customer website */}
+      {!isAdminPanel && <Footer />}
+    </>
   );
 }
+
+// Main App
+export default function App() {
+  return (
+    <BrowserRouter>
+      <LayoutWrapper />
+    </BrowserRouter>
+  );
+}                      
