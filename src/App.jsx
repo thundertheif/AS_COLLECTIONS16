@@ -56,24 +56,18 @@ function LayoutWrapper() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        {/* ADMIN LOGIN */}
-        <Route path="/admin-login" element={<AdminLogin />} />
+      {/* Admin Login */}
+<Route path="/admin-login" element={<AdminLogin />} />
 
-        {/* ================= ADMIN PANEL (PROTECTED) ================= */}
-        <Route
-          path="/admin"
-          element={
-            <ProtectedAdmin>
-              <AdminLayout />
-            </ProtectedAdmin>
-          }
-        >
-          <Route index element={<Dashboard />} />
-          <Route path="products" element={<Products />} />
-          <Route path="orders" element={<Orders />} />
-          <Route path="settings" element={<Settings />} />
-        </Route>
-      </Routes>
+{/* Protected Admin Panel */}
+<Route path="/admin" element={<ProtectedAdmin />}>
+  <Route element={<AdminLayout />}>
+    <Route path="dashboard" element={<Dashboard />} />
+    <Route path="products" element={<Products />} />
+    <Route path="settings" element={<Settings />} />
+  </Route>
+</Route>
+
 
       {/* Footer for customer pages */}
       {!isAdminPanel && <Footer />}
