@@ -10,7 +10,6 @@ import kurti1 from "../assets/images/kurti1.jpg";
 import kurti2 from "../assets/images/kurti2.jpg";
 
 const products = [
-  // TOPS
   {
     id: 1,
     name: "Floral Printed Top",
@@ -39,8 +38,6 @@ const products = [
     image: top4,
     category: "Tops",
   },
-
-  // KURTIS
   {
     id: 5,
     name: "Floral Kurti",
@@ -64,22 +61,14 @@ export default function ProductsGrid({ category }) {
 
   return (
     <div className="products-grid">
-      {filteredProducts.length === 0 ? (
-        <p>No products found.</p>
-      ) : (
-        filteredProducts.map((product) => (
-          <div className="product-card" key={product.id}>
-            <img
-              src={product.image}
-              alt={product.name}
-              className="product-image"
-            />
-            <h3>{product.name}</h3>
-            <p className="product-price">{product.price}</p>
-            <button className="add-btn">Add to Cart</button>
-          </div>
-        ))
-      )}
+      {filteredProducts.map((product) => (
+        <div className="product-card" key={product.id}>
+          <img src={product.image} alt={product.name} className="product-image" />
+          <h3>{product.name}</h3>
+          <p className="product-price">{product.price}</p>
+          <button className="add-btn">Add to Cart</button>
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/ASC.jpeg";  
-
+import logo from "../assets/images/ASC.jpeg";
 
 export default function Navbar() {
   return (
@@ -22,36 +21,35 @@ export default function Navbar() {
           <button>🔍</button>
         </div>
 
-       {/* Icons */}
-   <div className="nav-icons">
-        <Link to="/wishlist">
-          <button className="nav-btn wishlist-btn">♡ Wishlist</button>
-       </Link>
+        {/* Icons */}
+        <div className="nav-icons">
 
-      <Link to="/cart">
-          <button className="nav-btn cart-btn">🛒 Cart</button>
-      </Link>
+          <Link to="/wishlist">
+            <button className="nav-btn wishlist-btn">♡ Wishlist</button>
+          </Link>
 
-      <Link to="/login">
-          <button className="nav-btn login-btn">Login / Signup</button>
-     </Link>
+          <Link to="/cart">
+            <button className="nav-btn cart-btn">🛒 Cart</button>
+          </Link>
 
-     <Link to="/admin-login">
-       <button className="nav-btn admin-btn">Admin Login</button>
-     </Link>
+          <Link to="/login">
+            <button className="nav-btn login-btn">Login / Signup</button>
+          </Link>
 
-    </div>
+          <Link to="/admin-login">
+            <button className="nav-btn admin-btn">Admin Login</button>
+          </Link>
 
+        </div>
       </div>
 
       {/* Menu */}
       <nav className="nav-menu">
         <Link to="/sarees">SAREES</Link>
         <Link to="/designer">DESIGNER MATERIALS</Link>
-        <Link to="/Tops">TOPS</Link>
+        <Link to="/tops">TOPS</Link>
         <Link to="/kurtis">KURTIS</Link>
         <Link to="/sale">SALE</Link>
-
       </nav>
 
     </header>
