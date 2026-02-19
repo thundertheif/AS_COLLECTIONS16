@@ -32,9 +32,14 @@ export default function Navbar() {
           <button className="nav-btn cart-btn">🛒 Cart</button>
       </Link>
 
-      <button className="nav-btn login-btn">
-          Login / Signup
-      </button>
+      <Link to="/login">
+          <button className="nav-btn login-btn">Login / Signup</button>
+     </Link>
+
+     <Link to="/admin-login">
+       <button className="nav-btn admin-btn">Admin Login</button>
+     </Link>
+
     </div>
 
       </div>

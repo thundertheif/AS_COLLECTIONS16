@@ -1,13 +1,13 @@
 import React from "react";
 import "../styles/ProductsGrid.css";
 
-import top1 from "../assets/images/top1.JPG";
-import top2 from "../assets/images/top2.JPG";
-import top3 from "../assets/images/top3.JPG";
-import top4 from "../assets/images/top4.JPG";
+import top0 from "../assets/images/top0.jpg";
+import top2 from "../assets/images/top2.jpg";
+import top3 from "../assets/images/top3.jpg";
+import top4 from "../assets/images/top4.jpg";
 
-import kurti1 from "../assets/images/kurti1.JPG";
-import kurti2 from "../assets/images/kurti2.JPG";
+import kurti1 from "../assets/images/kurti1.jpg";
+import kurti2 from "../assets/images/kurti2.jpg";
 
 const products = [
   // TOPS
@@ -15,7 +15,7 @@ const products = [
     id: 1,
     name: "Floral Printed Top",
     price: "₹999",
-    image: top1,
+    image: top0,
     category: "Tops",
   },
   {

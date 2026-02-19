@@ -1,3 +1,4 @@
+
 const products = [
 
   // ================= SAREES =================
@@ -73,7 +74,7 @@ const products = [
     name: "Black Party Top",
     category: "Top",
     price: 599,
-    image: "/images/tops/top1.jpg"
+    image: "/images/tops/top0.jpg"
   },
   {
     id: 202,
