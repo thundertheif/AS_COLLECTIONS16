@@ -39,6 +39,7 @@ export default function Navbar() {
       <Link to="/admin-login">
          <button className="nav-btn admin-btn">Admin Login</button>
       </Link>
+     
     </div>
 
       </div>
