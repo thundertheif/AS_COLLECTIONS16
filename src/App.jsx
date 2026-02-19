@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
+// Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -17,24 +18,29 @@ import Wishlist from "./pages/Wishlist";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
-// Admin Pages
+// Admin Auth & Pages
+import AdminLogin from "./pages/AdminLogin";
+import ProtectedAdmin from "./pages/admin/ProtectedAdmin";
 import AdminLayout from "./pages/admin/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
 import Products from "./pages/admin/Products";
 import Orders from "./pages/admin/Orders";
 import Settings from "./pages/admin/Settings";
 
+// Layout Wrapper
 function LayoutWrapper() {
   const location = useLocation();
-  const isAdmin = location.pathname.startsWith("/admin");
+
+  // Hide navbar & footer only inside admin panel (not admin-login)
+  const isAdminPanel = location.pathname.startsWith("/admin") && location.pathname !== "/admin-login";
 
   return (
     <>
-      {/* Hide Navbar for Admin */}
-      {!isAdmin && <Navbar />}
+      {/* Navbar only for customer website */}
+      {!isAdminPanel && <Navbar />}
 
       <Routes>
-        {/* CUSTOMER WEBSITE */}
+        {/* ================= CUSTOMER WEBSITE ================= */}
         <Route path="/" element={<Home />} />
         <Route path="/sarees" element={<Sarees />} />
         <Route path="/tops" element={<Tops />} />
@@ -44,12 +50,22 @@ function LayoutWrapper() {
         <Route path="/sale" element={<Sale />} />
         <Route path="/wishlist" element={<Wishlist />} />
 
-        {/* CUSTOMER LOGIN & SIGNUP */}
+        {/* CUSTOMER LOGIN / SIGNUP */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        {/* ADMIN PANEL */}
-        <Route path="/admin" element={<AdminLayout />}>
+        {/* ================= ADMIN LOGIN ================= */}
+        <Route path="/admin-login" element={<AdminLogin />} />
+
+        {/* ================= PROTECTED ADMIN PANEL ================= */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedAdmin>
+              <AdminLayout />
+            </ProtectedAdmin>
+          }
+        >
           <Route index element={<Dashboard />} />
           <Route path="products" element={<Products />} />
           <Route path="orders" element={<Orders />} />
@@ -57,12 +73,13 @@ function LayoutWrapper() {
         </Route>
       </Routes>
 
-      {/* Hide Footer for Admin */}
-      {!isAdmin && <Footer />}
+      {/* Footer only for customer website */}
+      {!isAdminPanel && <Footer />}
     </>
   );
 }
 
+// Main App
 export default function App() {
   return (
     <BrowserRouter>
