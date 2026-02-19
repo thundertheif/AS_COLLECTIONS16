@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/ProductsGrid.css";
 
 import top1 from "../assets/images/top1.jpg";
+import top2 from "../assets/images/top2.jpg";
 import top3 from "../assets/images/top3.jpg";
 import top4 from "../assets/images/top4.jpg";
 
@@ -83,6 +84,7 @@ export default function ProductsGrid({ category }) {
     </div>
   );
 }
+
 
 
 
