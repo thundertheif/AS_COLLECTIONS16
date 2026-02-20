@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../assets/images/logo.png"; // change if needed
+import logo from "../assets/images/logo.png";
 
 export default function Navbar() {
   const loggedIn = localStorage.getItem("loggedIn");
@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <header className="nav-main">
 
-      {/* ================= TOP NAV BAR ================= */}
+      {/* TOP BAR */}
       <div className="nav-top">
 
         {/* LOGO */}
@@ -22,50 +22,36 @@ export default function Navbar() {
           <span className="logo-text">AS COLLECTIONS</span>
         </Link>
 
-        {/* SEARCH BAR */}
+        {/* SEARCH */}
         <div className="search-box">
-          <input
-            type="text"
-            placeholder="Search for sarees, kurtis, tops and more..."
-          />
+          <input type="text" placeholder="Search sarees, kurtis, tops..." />
           <button>🔍</button>
         </div>
 
         {/* ICONS */}
         <div className="nav-icons">
-          <Link to="/wishlist">
-            <span>♡ Wishlist</span>
-          </Link>
-
+          <Link to="/wishlist">❤️ Wishlist</Link>
           <Link to="/cart" className="cart">
-            <span>🛒 Cart</span>
-            <span className="cart-count">2</span> {/* optional cart count */}
+            🛒 Cart <span className="cart-count">0</span>
           </Link>
 
           {!loggedIn ? (
             <>
-              <Link to="/login">
-                <span>Login</span>
-              </Link>
-              <Link to="/signup">
-                <span>Signup</span>
-              </Link>
+              <Link to="/login">Login</Link>
+              <Link to="/signup">Signup</Link>
             </>
           ) : (
-            <span onClick={handleLogout} style={{ cursor: "pointer", color: "#dc2626" }}>
-              Logout
-            </span>
+            <button onClick={handleLogout}>Logout</button>
           )}
         </div>
-
       </div>
 
-      {/* ================= MENU BAR ================= */}
+      {/* MENU BAR */}
       <nav className="nav-menu">
-        <Link to="/sarees">SAREES</Link>
-        <Link to="/designer">DESIGNER MATERIALS</Link>
-        <Link to="/tops">TOPS</Link>
-        <Link to="/kurtis">KURTIS</Link>
+        <Link to="/sarees">Sarees</Link>
+        <Link to="/tops">Tops</Link>
+        <Link to="/kurtis">Kurtis</Link>
+        <Link to="/designer">Designer</Link>
         <Link to="/sale" className="sale">SALE</Link>
       </nav>
 
