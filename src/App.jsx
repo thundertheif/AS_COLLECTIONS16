@@ -48,7 +48,7 @@ function LayoutWrapper() {
         <Route path="/designer" element={<DesignerMaterials />} />
         <Route path="/sale" element={<Sale />} />
         <Route path="/wishlist" element={<Wishlist />} />
-
+        </Routes> 
         {/* Auth */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
