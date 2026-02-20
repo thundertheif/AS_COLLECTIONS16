@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 // Pages
 import Home from "./pages/Home";
 import Sarees from "./pages/Sarees";
-import Tops from "./pages/tops";
+import tops from "./pages/Tops";
 import Kurtis from "./pages/Kurtis";
 import Cart from "./pages/Cart";
 import DesignerMaterials from "./pages/DesignerMaterials";
