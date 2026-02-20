@@ -1,92 +1,74 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import logo from "../assets/images/logo.png"; // change if needed
 
-// Components
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+export default function Navbar() {
+  const loggedIn = localStorage.getItem("loggedIn");
 
-// Customer Pages
-import Home from "./pages/Home";
-import Sarees from "./pages/Sarees";
-import Tops from "./pages/Tops";
-import Kurtis from "./pages/Kurtis";
-import Cart from "./pages/Cart";
-import DesignerMaterials from "./pages/DesignerMaterials";
-import Sale from "./pages/Sale";
-import Wishlist from "./pages/Wishlist";
-
-// Customer Auth
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-
-// Admin Pages
-import AdminLogin from "./pages/AdminLogin";
-import ProtectedAdmin from "./pages/admin/ProtectedAdmin";
-import AdminLayout from "./pages/admin/AdminLayout";
-import Dashboard from "./pages/admin/Dashboard";
-import Products from "./pages/admin/Products";
-import Orders from "./pages/admin/Orders";
-import Settings from "./pages/admin/Settings";
-
-// Layout Wrapper
-function LayoutWrapper() {
-  const location = useLocation();
-
-  // Hide navbar/footer only in admin panel
-  const isAdminPanel =
-    location.pathname.startsWith("/admin") &&
-    location.pathname !== "/admin-login";
+  const handleLogout = () => {
+    localStorage.removeItem("loggedIn");
+    window.location.reload();
+  };
 
   return (
-    <>
-      {/* Navbar for customer pages */}
-      {!isAdminPanel && <Navbar />}
+    <header className="nav-main">
 
-      <Routes>
-        {/* ================= CUSTOMER WEBSITE ================= */}
-        <Route path="/" element={<Home />} />
-        <Route path="/sarees" element={<Sarees />} />
-        <Route path="/tops" element={<Tops />} />
-        <Route path="/kurtis" element={<Kurtis />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/designer" element={<DesignerMaterials />} />
-        <Route path="/sale" element={<Sale />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+      {/* ================= TOP NAV BAR ================= */}
+      <div className="nav-top">
 
-        {/* CUSTOMER LOGIN */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        {/* LOGO */}
+        <Link to="/" className="logo-container">
+          <img src={logo} alt="AS COLLECTIONS" className="logo-img" />
+          <span className="logo-text">AS COLLECTIONS</span>
+        </Link>
 
-        {/* ADMIN LOGIN */}
-        <Route path="/admin-login" element={<AdminLogin />} />
+        {/* SEARCH BAR */}
+        <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search for sarees, kurtis, tops and more..."
+          />
+          <button>🔍</button>
+        </div>
 
-        {/* ================= ADMIN PANEL (PROTECTED) ================= */}
-        <Route
-          path="/admin"
-          element={
-            <ProtectedAdmin>
-              <AdminLayout />
-            </ProtectedAdmin>
-          }
-        >
-          <Route index element={<Dashboard />} />
-          <Route path="products" element={<Products />} />
-          <Route path="orders" element={<Orders />} />
-          <Route path="settings" element={<Settings />} />
-        </Route>
-      </Routes>
+        {/* ICONS */}
+        <div className="nav-icons">
+          <Link to="/wishlist">
+            <span>♡ Wishlist</span>
+          </Link>
 
-      {/* Footer for customer pages */}
-      {!isAdminPanel && <Footer />}
-    </>
+          <Link to="/cart" className="cart">
+            <span>🛒 Cart</span>
+            <span className="cart-count">2</span> {/* optional cart count */}
+          </Link>
+
+          {!loggedIn ? (
+            <>
+              <Link to="/login">
+                <span>Login</span>
+              </Link>
+              <Link to="/signup">
+                <span>Signup</span>
+              </Link>
+            </>
+          ) : (
+            <span onClick={handleLogout} style={{ cursor: "pointer", color: "#dc2626" }}>
+              Logout
+            </span>
+          )}
+        </div>
+
+      </div>
+
+      {/* ================= MENU BAR ================= */}
+      <nav className="nav-menu">
+        <Link to="/sarees">SAREES</Link>
+        <Link to="/designer">DESIGNER MATERIALS</Link>
+        <Link to="/tops">TOPS</Link>
+        <Link to="/kurtis">KURTIS</Link>
+        <Link to="/sale" className="sale">SALE</Link>
+      </nav>
+
+    </header>
   );
 }
-
-// Main App
-export default function App() {
-  return (
-    <BrowserRouter>
-      <LayoutWrapper />
-    </BrowserRouter>
-  );
-}
-
