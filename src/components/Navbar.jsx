@@ -12,28 +12,20 @@ export default function Navbar() {
 
   return (
     <header className="nav-main">
-
-      {/* TOP BAR */}
       <div className="nav-top">
-
-        {/* LOGO */}
         <Link to="/" className="logo-container">
           <img src={logo} alt="AS COLLECTIONS" className="logo-img" />
           <span className="logo-text">AS COLLECTIONS</span>
         </Link>
 
-        {/* SEARCH */}
         <div className="search-box">
           <input type="text" placeholder="Search sarees, kurtis, tops..." />
           <button>🔍</button>
         </div>
 
-        {/* ICONS */}
         <div className="nav-icons">
           <Link to="/wishlist">❤️ Wishlist</Link>
-          <Link to="/cart" className="cart">
-            🛒 Cart <span className="cart-count">0</span>
-          </Link>
+          <Link to="/cart">🛒 Cart</Link>
 
           {!loggedIn ? (
             <>
@@ -46,15 +38,13 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* MENU BAR */}
       <nav className="nav-menu">
         <Link to="/sarees">Sarees</Link>
         <Link to="/tops">Tops</Link>
         <Link to="/kurtis">Kurtis</Link>
         <Link to="/designer">Designer</Link>
-        <Link to="/sale" className="sale">SALE</Link>
+        <Link to="/sale">SALE</Link>
       </nav>
-
     </header>
   );
 }
