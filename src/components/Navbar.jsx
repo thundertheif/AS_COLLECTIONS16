@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/ASC.jpg";
 
 export default function Navbar() {
   const loggedIn = localStorage.getItem("loggedIn");
