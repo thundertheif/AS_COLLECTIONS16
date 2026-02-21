@@ -1,6 +1,9 @@
-
+import top0 from "../assets/images/top0.jpg";
+import top2 from "../assets/images/top2.jpg";
+import top3 from "../assets/images/top3.jpg";
 
 const products = [
+
 
   // ================= SAREES =================
   {
@@ -75,23 +78,23 @@ const products = [
     name: "Black Party Top",
     category: "Top",
     price: 599,
-    image: top0.jpg
+    image: top0
   },
   {
     id: 202,
     name: "White Casual Top",
     category: "Top",
     price: 499,
-    image: top2.jpg
+    image: top2
   },
   {
     id: 203,
     name: "Floral Printed Top",
     category: "Top",
     price: 699,
-    image: top3.jpg
+    image: top3
   },
-
+  
   // ================= DESIGNER MATERIALS =================
   {
     id: 301,
