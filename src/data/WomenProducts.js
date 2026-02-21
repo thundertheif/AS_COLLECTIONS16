@@ -1,4 +1,4 @@
-import top0 from "../assets/images/tops/top0.jpg";
+
 
 const products = [
 
