@@ -75,21 +75,21 @@ const products = [
     name: "Black Party Top",
     category: "Top",
     price: 599,
-    image: "/images/tops/top0.jpg"
+    image: top0.jpg
   },
   {
     id: 202,
     name: "White Casual Top",
     category: "Top",
     price: 499,
-    image: "/images/tops/top2.jpg"
+    image: top2.jpg
   },
   {
     id: 203,
     name: "Floral Printed Top",
     category: "Top",
     price: 699,
-    image: "/images/tops/top3.jpg"
+    image: top3.jpg
   },
 
   // ================= DESIGNER MATERIALS =================
